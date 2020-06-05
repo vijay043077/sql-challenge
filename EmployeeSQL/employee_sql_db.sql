@@ -58,9 +58,7 @@ CREATE TABLE salaries (
 );
 SELECT * FROM salaries;
 
---tried drop table method to re-do tables which had errors, chose to restart and correct tables in the database instead
 DROP TABLE salaries;
 DROP TABLE titles;
 DROP TABLE titles;
 DROP TABLE salaries;
-
