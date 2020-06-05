@@ -70,6 +70,7 @@ CREATE TABLE salaries
 SELECT *
 FROM salaries;
 
+/* Here were attempts to re-do tables without starting all over
 DROP TABLE salaries;
 DROP TABLE titles;
 DROP TABLE titles;
