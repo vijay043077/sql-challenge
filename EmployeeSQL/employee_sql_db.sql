@@ -1,4 +1,5 @@
-CREATE TABLE employees (
+CREATE TABLE employees
+(
 	emp_no INT NOT NULL,
 	birth_date DATE NOT NULL,
 	first_name VARCHAR(50) NOT NULL,
@@ -7,16 +8,20 @@ CREATE TABLE employees (
 	hire_date DATE NOT NULL,
 	PRIMARY KEY (emp_no)
 );
-SELECT * FROM employees;
+SELECT *
+FROM employees;
 
-CREATE TABLE departments (
+CREATE TABLE departments
+(
 	dept_no VARCHAR(10) NOT NULL,
 	dept_name VARCHAR(25) NOT NULL,
 	PRIMARY KEY (dept_no)
 );
-SELECT * FROM departments;
+SELECT *
+FROM departments;
 
-CREATE TABLE dept_manager (
+CREATE TABLE dept_manager
+(
 	dept_no VARCHAR(10) NOT NULL,
 	emp_no INT NOT NULL,
 	from_date DATE NOT NULL,
@@ -25,9 +30,11 @@ CREATE TABLE dept_manager (
 	FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
-SELECT * FROM dept_manager;
+SELECT *
+FROM dept_manager;
 
-CREATE TABLE dept_emp (
+CREATE TABLE dept_emp
+(
 	emp_no INT NOT NULL,
 	dept_no VARCHAR(10) NOT NULL,
 	from_date DATE NOT NULL,
@@ -36,9 +43,11 @@ CREATE TABLE dept_emp (
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
 	FOREIGN KEY (dept_no) REFERENCES departments (dept_no)
 );
-SELECT * FROM dept_emp;
+SELECT *
+FROM dept_emp;
 
-CREATE TABLE titles (
+CREATE TABLE titles
+(
 	emp_no INT NOT NULL,
 	title VARCHAR(25) NOT NULL,
 	from_date DATE NOT NULL,
@@ -46,9 +55,11 @@ CREATE TABLE titles (
 	PRIMARY KEY (emp_no, title, from_date),
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
-SELECT * FROM titles;
+SELECT *
+FROM titles;
 
-CREATE TABLE salaries (
+CREATE TABLE salaries
+(
 	emp_no INT NOT NULL,
 	salary INT NOT NULL,
 	from_date DATE NOT NULL,
@@ -56,7 +67,8 @@ CREATE TABLE salaries (
 	PRIMARY KEY (emp_no, salary, from_date),
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
-SELECT * FROM salaries;
+SELECT *
+FROM salaries;
 
 DROP TABLE salaries;
 DROP TABLE titles;
